@@ -1,0 +1,18 @@
+<distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>GitHub OWNER Apache Maven Packages</name>
+     <url>https://{% ifversion fpt or ghec %}maven.pkg.github.com{% else %}maven.HOSTNAME{% endif %}/OWNER/REPOSITORY</url>
+   </repository>
+</distributionManagement>
+```{% ifversion ghes %}
+If your instance has subdomain isolation disabled:
+```xml
+<distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>GitHub OWNER Apache Maven Packages</name>
+     <url>https://HOSTNAME/_registry/maven/OWNER/REPOSITORY</url>
+   </repository>
+</distributionManagement>
+```{% endif %}
